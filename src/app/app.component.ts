@@ -173,11 +173,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     if (data.middleClass) {
-      conditions.push('aux.familyIncome => 1345.52 && aux.familyIncome <= 11687.23 ');
+      conditions.push('aux.familyIncome >= 1345.52 && aux.familyIncome <= 11687.23 ');
     }
 
     if (data.rich) {
-      conditions.push('aux.familyIncome => 11687.23');
+      conditions.push('aux.familyIncome >= 11687.23');
     }
 
     this.applySearch(conditions);
@@ -208,11 +208,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   searchByPoliticalPosition(data: PoliticalPosition): void {
     let conditions: string[] = [];
 
-    if (data.left) {
+    if (data.right) {
       conditions.push('aux.politicalPosition == "direita"');
     }
 
-    if (data.right) {
+    if (data.left) {
       conditions.push('aux.politicalPosition == "esquerda"');
     }
 
