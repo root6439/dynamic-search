@@ -236,6 +236,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   applySearch(conditions: string[]): void {
     if (conditions.length == 0) {
+      this.setSortAndPaginator();
       return;
     }
 
