@@ -246,12 +246,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.setSortAndPaginator();
   }
 
-  searchBy(searchTerm: string): void {
-    this.filteredData = this.filteredData.filter((aux: User) => aux.name.includes(searchTerm) || aux.nationality.includes(searchTerm));
-    this.dataSource = new MatTableDataSource(this.filteredData);
-    this.setSortAndPaginator();
-  }
-
   setSortAndPaginator(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
